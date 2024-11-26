@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles/dashboard.css">
+</head>
+<body>
+    <div class="admin-dashboard">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="logo">Admin Dashboard</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="/users.html">Users</a></li>
+                <li><a href="#booking-management">Bookings</a></li>
+                <li class="dropdown">
+                    <a href="#more" class="dropbtn">More</a>
+                    <div class="dropdown-content">
+                        <a href="#reports">Reports</a>
+                        <a href="#feedback-management">Feedback</a>
+                        <a href="#settings">Settings</a>
+                        <a href="#notifications">Notifications</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Content -->
+        <main>
+            <section id="home">
+                <h1>Welcome, Admin!</h1>
+                <p>Quick overview of system stats:</p>
+                <div class="stats">
+                    <div class="stat-card">Total Users: <span id="total-users">0</span></div>
+                    <div class="stat-card">Total Bookings: <span id="total-bookings">0</span></div>
+                    <div class="stat-card">Feedback Received: <span id="total-feedback">0</span></div>
+                </div>
+            </section>
+
+            <section id="user-management" class="hidden">
+                <h2>User Management</h2>
+                <div id="user-list"></div>
+            </section>
+
+            <section id="booking-management" class="hidden">
+    <h2>Booking Management</h2>
+    <div class="search-bar">
+        <input type="text" id="search-bookings" placeholder="Search by booking ID or user name">
+    </div>
+    <div id="booking-list" class="table-container">
+        <!-- Dynamic booking table will be loaded here -->
+    </div>
+        </section>
+
+          <section id="reports" class="hidden">
+               <h2>Reports</h2>
+               <canvas id="report-chart"></canvas>
+
+               <div class="report-actions">
+                    <button id="download-report" class="btn">Download Report</button>
+                    <button id="print-report" class="btn">Print Report</button>
+                    <button id="share-report" class="btn">Share via Email</button>
+               </div>
+
+               <div id="email-modal" class="hidden">
+                 <div class="modal-content">
+                    <h3>Share Report via Email</h3>
+                    <form id="email-form">
+                          <label for="recipient-email">Recipient Email:</label>
+                          <input type="email" id="recipient-email" required>
+                          <div class="email-buttons">
+                          <button type="submit" class="btn">Send</button>
+                          <button type="button" id="cancel-email" class="btn">Cancel</button>
+                          </div>
+                     </form>
+                 </div>
+              </div>
+          </section>
+
+          <section id="feedback-management" class="hidden">
+           <h2>Feedback Management</h2>
+           <div id="feedback-list" class="table-container">
+        <!-- Feedback table will be dynamically generated -->
+           </div>
+        </section>
+
+           <section id="settings" class="hidden">
+               <h2>Admin Settings</h2>
+               <form id="settings-form">
+               <div class="form-group">
+                    <label for="admin-name">Admin Name:</label>
+                    <input type="text" id="admin-name" placeholder="Enter your name">
+               </div>
+               <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Enter your email">
+               </div>
+               <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" placeholder="Enter new password">
+                    <button type="button" id="toggle-password" class="btn">Show</button>
+               </div>
+               <div class="form-group">
+                    <label for="language">Preferred Language:</label>
+                    <select id="language">
+                           <option value="en">English</option>
+                           <option value="sw">Swahili</option>
+                           <option value="fr">French</option>
+                   </select>
+               </div>
+              <div class="form-group">
+                       <label for="timezone">Timezone:</label>
+                       <select id="timezone">
+                           <option value="GMT">GMT</option>
+                           <option value="EAT">EAT (East Africa Time)</option>
+                           <option value="PST">PST (Pacific Standard Time)</option>
+                       </select>
+               </div>
+               <div class="form-group">
+                   <button type="submit" class="btn">Save Settings</button>
+               </div>  
+            </form>
+        </section>
+
+          <section id="notifications" class="hidden">
+              <h2>Notifications</h2>
+              <div class="notification-settings">
+                 <h3>Manage Notifications</h3>
+                 <form id="notification-form">
+                 <div class="form-group">
+                      <label>
+                      <input type="checkbox" id="email-notifications"> Email Notifications
+                      </label>
+                  </div>
+                  <div class="form-group">
+                     <label>
+                     <input type="checkbox" id="sms-notifications"> SMS Notifications
+                    </label>
+                  </div>
+                 <div class="form-group">
+                    <label>
+                    <input type="checkbox" id="push-notifications"> Push Notifications
+                    </label>
+                 </div>
+                 <div class="form-group">
+                    <button type="submit" class="btn">Update Preferences</button>
+                 </div>
+               </form>
+            </div>
+            <div class="notification-history">
+                <h3>Notification History</h3>
+                <ul id="notification-list">
+                <li>No new notifications</li>
+                 </ul>
+             </div>
+      </section>
+        </main>
+    </div>
+    <script src="scripts/admin.js"></script>
+    <script src="scripts/rep.js"></script>
+</body>
+</html>

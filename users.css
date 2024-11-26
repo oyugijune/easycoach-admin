@@ -1,0 +1,79 @@
+/* User Management Styles */
+.search-section {
+    margin: 20px 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-section input {
+    width: 300px;
+    padding: 8px;
+    border: 2px solid #e60000;
+    border-radius: 5px;
+}
+
+.search-section button {
+    padding: 8px 15px;
+    background-color: #e60000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.search-section button:hover {
+    background-color: #b30000;
+}
+
+/* User Table Section */
+.user-table-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.user-table-section th, .user-table-section td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.user-table-section th {
+    background-color: #e60000;
+    color: white;
+}
+
+.user-table-section tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.user-table-section tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.user-table-section .actions button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.user-table-section .actions .edit-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.user-table-section .actions .delete-btn {
+    background-color: #e60000;
+    color: white;
+}
+
+.user-table-section .actions button:hover {
+    opacity: 0.8;
+}
+
